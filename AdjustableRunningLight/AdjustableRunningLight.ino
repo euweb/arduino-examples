@@ -4,14 +4,17 @@
 const int analogInPin = A0;  // Analog input pin that the potentiometer is attached to
 
 void setup() {
+  
   pinMode(13, OUTPUT);
   pinMode(12, OUTPUT);
   pinMode(11, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(9, OUTPUT);
   pinMode(6, OUTPUT);
   pinMode(5, OUTPUT);
   pinMode(4, OUTPUT);
   pinMode(3, OUTPUT);
-  pinMode(10, OUTPUT);
+  pinMode(2, OUTPUT); 
 }
 
 // the loop function runs over and over again forever
@@ -21,6 +24,7 @@ void loop() {
   digitalWrite(5, HIGH);
   digitalWrite(6, HIGH);
   digitalWrite(3, HIGH);
+  digitalWrite(2, HIGH);
   digitalWrite(13, HIGH);   // turn the LED on (HIGH is the voltage level)
   delay(getDelay());              // wait for a second
 
@@ -52,8 +56,15 @@ void loop() {
   digitalWrite(10, LOW);
   delay(getDelay());
 
-}
+  digitalWrite(2, LOW);
+  digitalWrite(9, HIGH);
+  delay(getDelay());
 
+  digitalWrite(2, HIGH);
+  digitalWrite(9, LOW);
+  delay(getDelay());
+
+}
 int getDelay() {
   
   // read the analog in value:
